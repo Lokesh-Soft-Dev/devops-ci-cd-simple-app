@@ -24,13 +24,9 @@ jobs:
           npm ci
           npm test
 
-    build-and-push:
+  build-and-push:
     needs: build-test
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -50,7 +46,7 @@ jobs:
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_TOKEN }}
 
-      - name: Build and push image (build-push-action)
+      - name: Build and push image
         uses: docker/build-push-action@v4
         with:
           context: ./simple-app
@@ -58,4 +54,3 @@ jobs:
           tags: |
             ${{ secrets.REGISTRY_USER }}/simple-app:${{ github.sha }}
             ${{ secrets.REGISTRY_USER }}/simple-app:latest
-
