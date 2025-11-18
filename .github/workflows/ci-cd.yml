@@ -31,10 +31,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-	      - name: Check Docker Hub credentials
+      - name: Check Docker Hub credentials
         run: |
           if [ -z "${{ secrets.REGISTRY_USER }}" ] || [ -z "${{ secrets.REGISTRY_TOKEN }}" ]; then
             echo "ERROR: REGISTRY_USER or REGISTRY_TOKEN is empty. Add them under Settings → Secrets → Actions."
@@ -43,6 +40,8 @@ jobs:
             echo "Registry user: ${{ secrets.REGISTRY_USER }}"
           fi
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
         run: |
@@ -63,3 +62,4 @@ jobs:
         run: |
           docker tag ${{ secrets.REGISTRY_USER }}/simple-app:${{ github.sha }} ${{ secrets.REGISTRY_USER }}/simple-app:latest
           docker push ${{ secrets.REGISTRY_USER }}/simple-app:latest
+
