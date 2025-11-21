@@ -1,4 +1,4 @@
-# DevOps CI/CD Pipeline – Simple Node.js Application
+## DevOps CI/CD Pipeline – Simple Node.js Application
 ---
 - This repository contains a complete CI/CD automation setup for a simple Node.js application using **GitHub Actions and Docker**.  
 - The goal of the project is to demonstrate how to automatically test the application, build a Docker image, push it to Docker Hub, and run it locally as a fully containerized service.
