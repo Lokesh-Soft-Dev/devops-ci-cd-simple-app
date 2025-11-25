@@ -58,9 +58,9 @@
 
 ## 👤 Author
 
-### KANNAIAH LOKESH
-### GitHub: https://github.com/Lokesh-Soft-Dev
-### Docker Hub Repository: https://hub.docker.com/repository/docker/lokesh111996/simple-app/
+## KANNAIAH LOKESH
+## GitHub: https://github.com/Lokesh-Soft-Dev
+## Docker Hub Repository: https://hub.docker.com/repository/docker/lokesh111996/simple-app/
 
 ---
 
